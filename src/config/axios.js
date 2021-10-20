@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = "donde debe estar en heroku7login";
+axios.defaults.baseURL = "https://bestenderapp.herokuapp.com/";
 
 export default axios

@@ -40,9 +40,9 @@ export default {
           let dataLogin = {
             username: this.user.username,
             token_access: result.data.access,
-            token_refresh: result.data.refresh,
+            token_refresh: result.data.refresh
           };
-          this.$emit("completedLogin", dataLogin);
+          this.$emit("completedLogIn", dataLogin);
         })
         .catch((error) => {
           if (error.response.status == "401") {

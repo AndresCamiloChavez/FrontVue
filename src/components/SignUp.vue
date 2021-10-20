@@ -29,7 +29,7 @@ export default {
         password: "",
         name: "",
         email: "",
-        nombreTienda:" ",
+        nombreTienda:"",
         account: {
           lastChangeDate: new Date().toJSON().toString(),
           balance: 0,
@@ -41,7 +41,7 @@ export default {
   methods: {
     processSignUp: function () {
       axios
-        .post("user", this.user, {
+        .post("user/", this.user, {
           headers: {},
         })
         .then((result) => {

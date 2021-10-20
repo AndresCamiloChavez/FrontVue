@@ -47,7 +47,12 @@
         </router-view>
       </div>
     </div>
+
+    <!-- HOME -->
     <div class="homee" v-if="is_auth">
+
+
+
       <div class="header">
         <ul class="header-list">
           <li>Mi Proveedores</li>
@@ -55,7 +60,9 @@
           <li>Mi Perfil</li>
         </ul>
       </div>
+      <button>jdfjas</button>
 
+      {{this.user}}
       <div v-on:click="verHome" class="button">Regresar</div>
     </div>
   </div>
@@ -75,7 +82,7 @@ export default {
     verifyAuth: function () {
       this.is_auth = localStorage.getItem("isAuth") || false;
       if (this.is_auth == false) this.$router.push({ name: "logIn" });
-      else this$.router.push({ name: "home" });
+      else this.$router.push({ name: "homee" });
     },
     loadLogIn: function () {
       this.$router.push({ name: "logIn" });
@@ -89,9 +96,10 @@ export default {
       localStorage.setItem("token_access", data.token_access);
       localStorage.setItem("token_refresh", data.token_refresh);
       alert("Autenticación exitosa");
+      this.verifyAuth();
     },
     completedSignUp: function (data) {
-      alert("registor exitoso");
+      alert("registro exitoso");
       this.completedLogIn(data);
     },
     verHome: function () {
